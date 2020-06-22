@@ -1,0 +1,43 @@
+<template>
+	<div>
+		<div class="page-body">
+			<div class="page-section page-section-gap">
+				<map style="width: 750rpx; height: 900rpx;" :latitude="latitude" :longitude="longitude" :markers="covers">
+				</map>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				id: 0, // 使用 marker点击事件 需要填写id
+				title: 'map',
+				latitude: 39.909,
+				longitude: 116.39742,
+				covers: [{
+					latitude: 39.909,
+					longitude: 116.39742,
+					iconPath: '../../../static/location.png'
+				}, {
+					latitude: 39.90,
+					longitude: 116.39,
+					iconPath: '../../../static/location.png'
+				}]
+			}
+		},
+		methods: {
+
+		}
+	}
+</script>
+
+<style>
+page-body{
+	width:750rpx;
+	height:1000rpx;
+	background-color:#2C405A;
+}
+</style>

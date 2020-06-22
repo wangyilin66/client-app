@@ -8,7 +8,9 @@
     "app-plus" : {
         "nvueCompiler" : "uni-app",
         "compilerVersion" : 3,
-        "modules" : {},
+        "modules" : {
+            "Maps" : {}
+        },
         "distribute" : {
             "android" : {
                 "permissions" : [
@@ -37,7 +39,14 @@
                 ]
             },
             "ios" : {},
-            "sdkConfigs" : {}
+            "sdkConfigs" : {
+                "maps" : {
+                    "baidu" : {
+                        "appkey_ios" : "BB:AC:E2:2F:97:3B:18:02:E7:D6:69:A3:7A:28:EF:D2:3F:A3:68:E7",
+                        "appkey_android" : "uni.UNI4D6B11E"
+                    }
+                }
+            }
         },
         "nvueLaunchMode" : ""
     },
