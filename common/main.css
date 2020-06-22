@@ -1,0 +1,50 @@
+.container {
+	position: relative;
+	top: 0;
+	left: 0;
+	background: rgba(247, 248, 251, 1);
+}
+.white-bg {
+	background-color: #ffffff;
+}
+.pading-left-add{
+		padding-left: 24rpx;
+}
+.pading-right-add{
+		padding-right: 24rpx;
+}
+.padding-bottom-add {
+	padding-bottom: 48rpx;
+}
+
+.card-bottom {
+	margin-bottom: 24rpx;
+}
+
+.red-text {
+	color: #F83C0A;
+}
+
+.bbb-text {
+	color: #BBBBBB;
+}
+
+.main-text {
+	color: #47CD97;
+}
+
+.one-text{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+uni-button[type=default][plain] {
+	color: #353535;
+	border: 1px solid #47CD97;
+	font-size: 24rpx;
+}
+
+uni-button {
+	line-height: 90rpx;
+}

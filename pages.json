@@ -1,0 +1,66 @@
+{
+	"pages": [{
+		"path": "pages/index/index",
+		"style": {
+			"navigationStyle": "custom"
+		}
+		// "navigationBarTextStyle": "black"
+	}, {
+		"path": "pages/ykan/index",
+		"style": {
+			"navigationStyle": "custom"
+		},
+		"navigationBarTextStyle": "black"
+		// "style": {
+		// 	"navigationBarTitleText": "优看",
+		// 	"app-plus": {
+		// 		"titleNView": false 
+		// 	},
+		// 	"navigationBarTextStyle": "black"
+		// }
+	}, {
+		"path": "pages/news/index",
+		"style": {
+			"navigationStyle": "custom"
+		},
+		"navigationBarTextStyle": "black"
+	}, {
+		"path": "pages/mpage/index",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}],
+	"globalStyle": {
+		"navigationStyle": "custom"
+	},
+	"tabBar": {
+		"color": "#394E5F",
+		"selectedColor": "#47CD97",
+		"backgroundColor": "#FFFFFF",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/images/tabbar/tab_home_nor.png",
+				"selectedIconPath": "static/images/tabbar/tab_home_light.png"
+			},
+			{
+				"pagePath": "pages/ykan/index",
+				"text": "优看",
+				"iconPath": "static/images/tabbar/tab_youkan_nor.png",
+				"selectedIconPath": "static/images/tabbar/tab_youkan_light.png"
+			},
+			{
+				"pagePath": "pages/news/index",
+				"text": "消息",
+				"iconPath": "static/images/tabbar/tab_mas_nor.png",
+				"selectedIconPath": "static/images/tabbar/tab_mas_light.png"
+			},
+			{
+				"pagePath": "pages/mpage/index",
+				"text": "我的",
+				"iconPath": "static/images/tabbar/tab_mine_nor.png",
+				"selectedIconPath": "static/images/tabbar/tab_mine_light.png"
+			}
+		]
+	}
+}
