@@ -34,7 +34,11 @@
 	}, {
 		"path": "pages/map/index",
 		"style": {
-			"navigationStyle": "custom"
+			"navigationBarTitleText": "首页",
+			"app-plus": {
+				"titleNView": false 
+			},
+			"navigationBarTextStyle": "black"
 		}
 	}],
 	"globalStyle": {
