@@ -4,7 +4,7 @@
 			<view v-if="title.line" class="til-line"></view>
 			<view v-bind:style="{fontSize:title.tilFontSize+'rpx'}">{{title.text}}</view>
 		</view>
-		<view class="til-right">
+		<view class="til-right" @click="gocounselor">
 			<uni-icons v-if="title.icon" type="arrowright" size="20"></uni-icons>
 			<text class="til-link" v-if="title.link" v-bind:style="{fontSize:title.linkFontSize+'rpx'}">{{title.linkText}}</text>
 		</view>
@@ -22,6 +22,9 @@
 		methods: {
 			titleChange: function(e) {
 
+			},
+			gocounselor:function(){
+				this.$emit("gocounse","")
 			}
 		},
 		props: {

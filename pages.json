@@ -1,31 +1,182 @@
 {
+	"easycom": {
+			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+		},
 	"pages": [{
 		"path": "pages/index/index",
 		"style": {
 			"navigationStyle": "custom"
 		}
-		// "navigationBarTextStyle": "black"
 	}, {
 		"path": "pages/ykan/index",
 		"style": {
 			"navigationStyle": "custom"
 		},
 		"navigationBarTextStyle": "black"
-		// "style": {
-		// 	"navigationBarTitleText": "优看",
-		// 	"app-plus": {
-		// 		"titleNView": false 
-		// 	},
-		// 	"navigationBarTextStyle": "black"
-		// }
+	
 	}, {
 		"path": "pages/news/index",
 		"style": {
 			"navigationStyle": "custom"
 		},
 		"navigationBarTextStyle": "black"
-	}, {
+	}, 
+	{
+		"path": "pages/news/subscription/subscription",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},
+	{
+		"path": "pages/news/subscription/dyue",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},
+	{
 		"path": "pages/mpage/index",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}, {
+		"path": "pages/login/logindex",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},{
+		"path": "pages/login/phonelogin",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},{
+		"path": "pages/ykan/detaisl",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},{
+		"path": "pages/ykan/counselor",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},{
+		"path": "pages/ykan/record",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},{
+		"path": "pages/ykan/bietsee",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}
+	,{
+		"path": "pages/ykan/particulars",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}
+	,
+	{
+		"path": "pages/ykan/counselist",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},
+	{
+		"path": "pages/mpage/data/personage",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}
+	,
+	{
+		"path": "pages/mpage/data/nickname",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}
+	,
+	{
+		"path": "pages/mpage/data/amend",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}
+	,
+	{
+		"path": "pages/mpage/data/verify",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}
+	,
+	{
+		"path": "pages/mpage/data/mycode",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}
+	,
+	{
+		"path": "pages/mpage/data/logout",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}
+	,
+	{
+		"path": "pages/mpage/data/thirdly",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}
+	,
+	{
+		"path": "pages/mpage/set/index",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}
+	,
+	{
+		"path": "pages/mpage/set/pushset",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	}
+	,
+	{
+		"path": "pages/mpage/set/we",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},
+	{
+		"path": "pages/mpage/set/versions",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},
+	{
+		"path": "pages/mpage/set/rule",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},
+	{
+		"path": "pages/mpage/set/rulecopy",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},
+	{
+		"path": "pages/mpage/set/rulecopytwo",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},
+	{
+		"path": "pages/ykan/replys",
 		"style": {
 			"navigationStyle": "custom"
 		}

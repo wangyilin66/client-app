@@ -7,12 +7,15 @@
 		</view>
 		<module-box :hasMargin="false">
 			<card :cardOption="cardOption">
-				<news-list :listData="cardList"></news-list>
+				<news-list :listData="cardList" @gosubscrip="gosubscrip"></news-list>
 			</card>
 		</module-box>
 		<module-box>
-			<view class="pading-left-add pading-right-add" style="padding-top:50rpx;">
+			<view class="pading-left-add pading-right-add" style="padding-top:50rpx;" v-if="newsList.length>0">
 				<news-list :listData="newsList" :hasBorder="hasBorder" :hasBadge="hasBadge"></news-list>
+			</view>
+			<view class="pading-left-add pading-right-add" style="padding-top:50rpx;" v-else>
+				<nulls></nulls>
 			</view>
 		</module-box>
 	</view>
@@ -23,6 +26,7 @@
 	import statusBar from '@/components/component/status-bar/status-bar.vue'
 	import card from '@/components/component/card/card.vue'
 	import newsList from './news-list/news-list.vue'
+	import nulls from './news-list/null.vue'
 
 	export default {
 		data() {
@@ -174,13 +178,20 @@
 			}
 		},
 		methods: {
-
+			gosubscrip(idx){
+				if(idx===1){
+					uni.navigateTo({
+						url:"./subscription/subscription"
+					})
+				}
+			}
 		},
 		components: {
 			moduleBox,
 			statusBar,
 			card,
-			newsList
+			newsList,
+			nulls
 		}
 	}
 </script>
