@@ -104,6 +104,7 @@
 					this.tabActive = idx;
 					this.popupShow ? '' : this.popupShow = true;
 				}
+				this.$emit('topTabChange',idx)
 			},
 			btnClick(item,idx){
 				if(item.isClose){

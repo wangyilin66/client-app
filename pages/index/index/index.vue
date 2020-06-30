@@ -241,10 +241,9 @@
 				});
 				tagItem[idx].className = 'top-tag-action';
 			},
-			navToGo(path){
-				console.log(path)
-				uni.redirectTo({
-					url:path
+			navToGo(idx){
+				uni.navigateTo({
+					url:this.mainIcon[idx].navPath
 				})
 			}
 		},

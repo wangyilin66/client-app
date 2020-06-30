@@ -1,10 +1,31 @@
 {
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
 	"pages": [{
-		"path": "pages/index/index",
+		"path": "pages/index/index/index",
 		"style": {
 			"navigationBarTitleText": "首页",
 			"app-plus": {
-				"titleNView": false 
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "white"
+		}
+	}, {
+		"path": "pages/index/secondary/sec_index/index",
+		"style": {
+			"navigationBarTitleText": "二手房",
+			"app-plus": {
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "white"
+		}
+	}, {
+		"path": "pages/index/secondary/sec_content/index",
+		"style": {
+			"navigationBarTitleText": "二手房详情",
+			"app-plus": {
+				"titleNView": false
 			},
 			"navigationBarTextStyle": "white"
 		}
@@ -13,7 +34,7 @@
 		"style": {
 			"navigationBarTitleText": "优看",
 			"app-plus": {
-				"titleNView": false 
+				"titleNView": false
 			},
 			"navigationBarTextStyle": "black"
 		}
@@ -22,23 +43,18 @@
 		"style": {
 			"navigationBarTitleText": "消息",
 			"app-plus": {
-				"titleNView": false 
+				"titleNView": false
 			},
 			"navigationBarTextStyle": "white"
 		}
 	}, {
 		"path": "pages/mpage/index",
 		"style": {
-			"navigationStyle": "custom"
-		}
-	}, {
-		"path": "pages/map/index",
-		"style": {
-			"navigationBarTitleText": "首页",
+			"navigationBarTitleText": "我的",
 			"app-plus": {
-				"titleNView": false 
+				"titleNView": false
 			},
-			"navigationBarTextStyle": "black"
+			"navigationBarTextStyle": "white"
 		}
 	}],
 	"globalStyle": {
@@ -49,7 +65,7 @@
 		"selectedColor": "#47CD97",
 		"backgroundColor": "#FFFFFF",
 		"list": [{
-				"pagePath": "pages/index/index",
+				"pagePath": "pages/index/index/index",
 				"text": "首页",
 				"iconPath": "static/images/tabbar/tab_home_nor.png",
 				"selectedIconPath": "static/images/tabbar/tab_home_light.png"
@@ -69,12 +85,6 @@
 			{
 				"pagePath": "pages/mpage/index",
 				"text": "我的",
-				"iconPath": "static/images/tabbar/tab_mine_nor.png",
-				"selectedIconPath": "static/images/tabbar/tab_mine_light.png"
-			},
-			{
-				"pagePath": "pages/map/index",
-				"text": "地图",
 				"iconPath": "static/images/tabbar/tab_mine_nor.png",
 				"selectedIconPath": "static/images/tabbar/tab_mine_light.png"
 			}

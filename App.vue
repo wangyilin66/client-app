@@ -12,6 +12,7 @@
 	};
 </script>
 
-<style>
+<style lang="scss">
 	@import url('common/main.css');
+	@import "uview-ui/index.scss";
 </style>
