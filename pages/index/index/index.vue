@@ -231,9 +231,7 @@
 			}
 		},
 		created(){
-			this.$u.get('/app/system/getMsgCode',{
-				phone:'321412412412'
-			}).then(res=>{
+			this.$u.api.getTest().then(res=>{
 				console.log(res)
 			}).catch(err=>{
 				console.log(err)

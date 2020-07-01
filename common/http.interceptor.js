@@ -1,22 +1,16 @@
 const install = (Vue, vm) => {
-	console.log(Vue.prototype.$u.http)
 	Vue.prototype.$u.http.setConfig({
-		baseUrl: 'http://192.168.1.101',
+		baseUrl: 'http://175.24.105.164:3000',
 		showLoading: true,
 		loadingText: '正在加载数据...',
 		loadingTime: 800,
-		originalData: false, // 是否在拦截器中返回服务端的原始数据
+		originalData: true, // 是否在拦截器中返回服务端的原始数据
 		loadingMask: true,
-		header: {
-			'content-type': 'multipart/form-data',
-		}
 	});
 
 	//请求拦截
 	Vue.prototype.$u.http.interceptor.request = (config) => {
-		// console.log(config.method)
 		const token = uni.getStorageSync('token');
-		console.log(token == '')
 		if (token && config.method == 'POST') {
 			config.header.token = token;
 		}
@@ -25,21 +19,18 @@ const install = (Vue, vm) => {
 
 	// 响应拦截
 	Vue.prototype.$u.http.interceptor.response = (res) => {
-		console.log(res.code)
-		if (res.code == 200) {
-			//请求成功
-			return res.result;
-		} else if (res.code == 401) {
-			//token失效
-			vm.$u.toast('验证失败，请重新登录');
-			setTimeout(() => {
-				// 此为uView的方法，详见路由相关文档
-				vm.$u.route('/pages/user/login')
-			}, 1500)
+		if (res.statusCode == 200) {
+			return res.data;
+		} else if (res.statusCode == 401) {
+			//token失效，清除token信息并跳转到登陆页面
+			uni.removeStorageSync('token');
+			vm.$u.toast('身份信息失效或已过期请重新登录')
+			return false;
+		} else if (res.statusCode == 404) {
+			vm.$u.toast('请求的信息不存在');
 			return false;
 		} else {
-			// 如果返回false，则会调用Promise的reject回调，
-			// 并将进入this.$u.post(url).then().catch(res=>{})的catch回调中，res为服务端的返回值
+			//请求超时或者网络有问题
 			return false;
 		}
 	}

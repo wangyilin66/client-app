@@ -56,5 +56,23 @@
         "setting" : {
             "urlCheck" : true
         }
+    },
+    "h5" : {
+        "devServer" : {
+            "port" : 8080,
+            "disableHostCheck" : true,
+            "proxy" : {
+                "/api" : {
+                    "target" : "http://175.24.105.164:3000",
+                    "changeOrigin" : true,
+                    "secure" : false
+                }
+            }
+        },
+        "optimization" : {
+            "treeShaking" : {
+                "enable" : true
+            }
+        }
     }
 }
