@@ -18,7 +18,7 @@
 			"app-plus": {
 				"titleNView": false
 			},
-			"navigationBarTextStyle": "white"
+			"navigationBarTextStyle": "black"
 		}
 	}, {
 		"path": "pages/index/secondary/sec_content/index",

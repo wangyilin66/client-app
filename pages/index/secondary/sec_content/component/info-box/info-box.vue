@@ -1,12 +1,14 @@
 <template>
 	<view class="info-box">
 		<view class="info-til">小区概况</view>
+		<u-read-more :toggle="true" :close-text="'查看全部信息'" :open-text="'隐藏部分信息'" :color="'#47cd97'">
 		<view class="info-con">
 			<view v-for="(item,idx) in infoContent" class="u-p-b-20">
 				<text class="u-tips-color">{{item.label}}:</text>
 				<text class="u-main-color u-line-1 u-p-l-20">{{item.text}}</text>
 			</view>
 		</view>
+		</u-read-more>
 	</view>
 </template>
 

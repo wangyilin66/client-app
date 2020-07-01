@@ -6,10 +6,10 @@
 					<view class="u-type-error"><text>{{cardData.price}}</text>元/平</view>
 					<view class='u-tips-color'>{{cardData.month}}月参考均价</view>
 				</view>
-				<view class="u-flex u-font-30">
+				<view class="u-flex u-font-30" style="font-weight:bold">
 						<view>比上月</view>
-						<view class="target"></view class="font-weight:bold">
-						<view>{{cardData.percent}}%</view>
+						<view class="target" :class="{'target-lower':parseInt(cardData.percent) < 0,'target-add':parseInt(cardData.percent) > 0}"></view>
+						<view>{{Math.abs(this.cardData.percent)}}%</view>
 				</view>
 			</view>
 			<view class="u-flex">
@@ -83,11 +83,18 @@
 				width: 0;
 				height: 0;
 				border: 18rpx solid transparent;
-				border-top-color: #47CD97;
 				position:relative;
-				top:10rpx;
 				margin:0 10rpx;
+				transform: scaleX(0.6);
 			}
+			.target-lower{
+				border-top-color: $u-type-primary;
+				top:10rpx;
+			},
+			.target-add{
+				border-bottom-color: $u-type-error;
+				bottom:10rpx;
+			},
 			.tipsBtn{
 				
 			}

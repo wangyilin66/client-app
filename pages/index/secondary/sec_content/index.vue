@@ -11,18 +11,21 @@
 			<view class="til">{{til}}</view>
 			<view class="light-til">{{lightTil}}</view>
 		</view>
-		<card-con :cardData="cardData" @shell="shell"  @deal="deal"  @rentout="rentout"></card-con>
-		
+		<card-con :cardData="cardData" @shell="shell" @deal="deal" @rentout="rentout"></card-con>
 		<info-box :infoContent="infoContent"></info-box>
+		<circum-box :circumData="circumData"></circum-box>
+		<houseing-list :houseingData="houseingData"></houseing-list>
+		<recommend-box :recData="recData"></recommend-box>
 	</view>
 </template>
 
 <script>
 	import navBar from '@/components/component/nav-bar/nav-bar.vue'
-	import topPopup from '@/components/component/top-popup/top-popup.vue'
-	import houseList from './component/house-list/house-list.vue'
+	import houseingList from './component/houseing-list/houseing-list.vue'
 	import cardCon from './component/card-con/card-con.vue'
 	import infoBox from './component/info-box/info-box.vue'
+	import circumBox from './component/circum-box/circum-box.vue'
+	import recommendBox from './component/recommend-box/recommend-box.vue'
 
 	export default {
 		name: 'sec_content',
@@ -54,52 +57,112 @@
 					dealHistory: 5,
 					rentout: 3
 				},
-				infoContent:[
-					{
-						label:'建成年代',
-						text:'2012年'
-					},{
-						label:'建成年代',
-						text:'2012年'
-					},{
-						label:'建成年代',
-						text:'2012年'
-					},{
-						label:'建成年代',
-						text:'2012年'
-					},{
-						label:'建成年代',
-						text:'2012年'
-					},{
-						label:'建成年代',
-						text:'2012年'
-					},{
-						label:'建成年代',
-						text:'2012年'
-					},{
-						label:'建成年代',
-						text:'2012年'
-					},{
-						label:'建成年代',
-						text:'2012年'
-					},{
-						label:'建成年代',
-						text:'2012年'
-					},{
-						label:'建成年代',
-						text:'2012年'
-					},{
-						label:'建成年代',
-						text:'2012年'
-					},{
-						label:'建成年代',
-						text:'2012年'
-					},
-				]
+				infoContent: [{
+					label: '建成年代',
+					text: '2012年'
+				}, {
+					label: '建成年代',
+					text: '2012年'
+				}, {
+					label: '建成年代',
+					text: '2012年'
+				}, {
+					label: '建成年代',
+					text: '2012年'
+				}, {
+					label: '建成年代',
+					text: '2012年'
+				}, {
+					label: '建成年代',
+					text: '2012年'
+				}, {
+					label: '建成年代',
+					text: '2012年'
+				}, {
+					label: '建成年代',
+					text: '2012年'
+				}, {
+					label: '建成年代',
+					text: '2012年'
+				}, {
+					label: '建成年代',
+					text: '2012年'
+				}, {
+					label: '建成年代',
+					text: '2012年'
+				}, {
+					label: '建成年代',
+					text: '2012年'
+				}, {
+					label: '建成年代',
+					text: '2012年'
+				}, ],
+				circumData: [{
+					name: '交通',
+					content: '地铁：距离长寿路200米，距离xxx米，距离长寿路200米，距离xxx米，距离长寿路200米，距离xxx米'
+				}, {
+					name: '医疗',
+					content: '医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗医疗'
+				}, {
+					name: '生活',
+					content: '生活生活生活生活生活生活'
+				}, {
+					name: '休闲',
+					content: '休闲休闲休闲休闲休闲休闲休闲'
+				}, ],
+				houseingData: {
+					tabs: [{
+						name: '在售房源'
+					}, {
+						name: '在租房源'
+					}],
+					swipers: [
+						[
+							{
+								imgUrl:'/static/images/wrap.png',
+								til:'新华联锦园 户型方正 采光 充足',
+								infos:'3室2厅/140㎡/朝南',
+								tips:['满五年','VR看装修','近地铁'],
+								total:580,
+								price:14000,
+								linkmanImgUrl:'/static/images/wrap.png',
+								linkmanName:'郭京飞',
+								linkmanCom:'优品',
+								linkmanTips:'期待与您保持沟通'
+							},
+							{
+								imgUrl:'/static/images/wrap.png',
+								til:'新华联锦园 户型方正 采光 充足',
+								infos:'3室2厅/140㎡/朝南',
+								tips:['满五年','VR看装修','近地铁'],
+								total:580,
+								price:14000
+							}
+						],[
+							{
+								imgUrl:'/static/images/wrap.png',
+								til:'新华联锦园 户型方正 采光 充足',
+								infos:'3室2厅/140㎡/朝南',
+								tips:['满五年','VR看装修','近地铁'],
+								total:580,
+								price:14000
+							},
+							{
+								imgUrl:'/static/images/wrap.png',
+								til:'新华联锦园 户型方正 采光 充足',
+								infos:'3室2厅/140㎡/朝南',
+								tips:['满五年','VR看装修','近地铁'],
+								total:580,
+								price:14000
+							}
+						]
+						
+					]
+				}
 			}
 		},
-		mounted(){
-			
+		mounted() {
+
 		},
 		methods: {
 			backChange: function() {
@@ -112,22 +175,23 @@
 					path: ''
 				})
 			},
-			shell: function(){
+			shell: function() {
 				console.log('用户点击了售房')
 			},
-			deal: function(){
+			deal: function() {
 				console.log('用户点击了历史成交')
 			},
-			rentout: function(){
+			rentout: function() {
 				console.log('用户点击了租房')
 			},
 		},
 		components: {
 			navBar,
-			topPopup,
-			houseList,
 			cardCon,
-			infoBox
+			infoBox,
+			circumBox,
+			houseingList,
+			recommendBox
 		}
 	}
 </script>
