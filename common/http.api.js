@@ -1,7 +1,6 @@
 
 //api地址(可选)
-const getTestUrl = '/getTest';
-const postTestUrl = '/postTest';
+const loginUrl = '/app/loginCli'
 
 const install = (Vue, vm) => {
 	// 不需要传入参数或固定参数
@@ -13,13 +12,12 @@ const install = (Vue, vm) => {
 	});
 	
 	// 需要传入参数
-	let getTest = (params = {}) => vm.$u.get(getTestUrl, params);
-	let postTest = (params = {}) => vm.$u.post(postTestUrl, params);
+	let login = (params = {}) => vm.$u.post(loginUrl,params)
 	
 	
 	
 	//挂载
-	vm.$u.api = {getTest_un,postTest_un,getTest, postTest};
+	vm.$u.api = {getTest_un,postTest_un,login};
 }
 
 export default{

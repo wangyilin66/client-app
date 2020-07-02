@@ -1,6 +1,6 @@
 const install = (Vue, vm) => {
 	Vue.prototype.$u.http.setConfig({
-		baseUrl: 'http://175.24.105.164:3000',
+		baseUrl: 'http://192.168.1.107',
 		showLoading: true,
 		loadingText: '正在加载数据...',
 		loadingTime: 800,
@@ -12,7 +12,8 @@ const install = (Vue, vm) => {
 	Vue.prototype.$u.http.interceptor.request = (config) => {
 		const token = uni.getStorageSync('token');
 		if (token && config.method == 'POST') {
-			config.header.token = token;
+			
+			config.header['admin-token'] = 'token';
 		}
 		return config;
 	}

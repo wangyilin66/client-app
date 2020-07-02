@@ -231,7 +231,7 @@
 			}
 		},
 		created(){
-			this.$u.api.getTest().then(res=>{
+			this.$u.api.login({phone:12345678901,msgCode:1234}).then(res=>{
 				console.log(res)
 			}).catch(err=>{
 				console.log(err)
