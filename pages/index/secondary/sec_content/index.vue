@@ -207,7 +207,7 @@
 		width: 100%;
 		height: 460rpx;
 		position: relative;
-		top: -100rpx;
+		top: calc(-100rpx - var(--status-bar-height));
 	}
 
 	.til-box {

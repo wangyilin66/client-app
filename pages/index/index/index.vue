@@ -230,13 +230,13 @@
 				]
 			}
 		},
-		created(){
-			this.$u.api.login({phone:12345678901,msgCode:1234}).then(res=>{
-				console.log(res)
-			}).catch(err=>{
-				console.log(err)
-			})
-		},
+		// created(){
+		// 	this.$u.api.login({phone:12345678901,msgCode:1234}).then(res=>{
+		// 		console.log(res)
+		// 	}).catch(err=>{
+		// 		console.log(err)
+		// 	})
+		// },
 		methods: {
 			swiperChange(e) {
 				this.swiperCurrent = e.detail.current;

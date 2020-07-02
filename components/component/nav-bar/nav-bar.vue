@@ -37,7 +37,7 @@
 		props: {
 			barColor: {
 				type: String,
-				default: 'FFFFFF',
+				default: '#FFFFFF',
 			},
 			navBg: {
 				type: String,

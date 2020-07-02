@@ -8,7 +8,6 @@ App.mpType = 'app'
 const app = new Vue({
 	...App
 })
-
 Vue.use(uView);
 import httpInterceptor from '@/common/http.interceptor.js'
 Vue.use(httpInterceptor, app)
