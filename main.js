@@ -9,11 +9,9 @@ App.mpType = 'app'
 const app = new Vue({
 	...App
 })
-
 Vue.use(uView);
 import httpInterceptor from '@/common/http.interceptor.js'
 Vue.use(httpInterceptor, app)
 import httpApi from '@/common/http.api.js'
 Vue.use(httpApi, app)
-
 app.$mount()

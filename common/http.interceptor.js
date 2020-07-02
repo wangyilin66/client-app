@@ -1,4 +1,3 @@
-
 const install = (Vue, vm) => {
 	Vue.prototype.$u.http.setConfig({
 		baseUrl: 'http://192.168.1.107',
