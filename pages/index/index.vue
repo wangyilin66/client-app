@@ -2,7 +2,9 @@
 	<view class="container">
 		<status-bar :barColor="barColor"></status-bar>
 		<module-box :paddingTop="20" :paddingBottom="20" :hasMargin="false">
-			<nav-bar></nav-bar>
+			<view class=""@click="goseach">
+				<nav-bar ></nav-bar>
+			</view>
 		</module-box>
 			<view class="swipe">
 				<uni-swiper-dot :info="swiperInfo" :current="swiperCurrent" mode="round" :dotsStyles="dotsStyles">
@@ -239,6 +241,11 @@
 					item.className = ''
 				});
 				tagItem[idx].className = 'top-tag-action';
+			},
+			goseach(){
+				uni.navigateTo({
+						url:"./search/search"
+				})
 			}
 		},
 		components: {

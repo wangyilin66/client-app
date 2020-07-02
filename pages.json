@@ -7,14 +7,24 @@
 		"style": {
 			"navigationStyle": "custom"
 		}
-	}, {
+	},
+	{
 		"path": "pages/ykan/index",
 		"style": {
 			"navigationStyle": "custom"
 		},
 		"navigationBarTextStyle": "black"
 	
-	}, {
+	}, 
+	{
+		"path": "pages/index/search/search",
+		"style": {
+			"navigationStyle": "custom"
+		},
+		"navigationBarTextStyle": "black"
+	
+	}, 
+	{
 		"path": "pages/news/index",
 		"style": {
 			"navigationStyle": "custom"
@@ -171,6 +181,12 @@
 	},
 	{
 		"path": "pages/mpage/set/rulecopytwo",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},
+	{
+		"path": "pages/mpage/usedhouse/index",
 		"style": {
 			"navigationStyle": "custom"
 		}

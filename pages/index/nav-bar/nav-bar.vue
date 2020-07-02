@@ -4,11 +4,14 @@
 			<view></view>
 		</view>
 		<view class='top-item'>
-			<search />
+		
+			<search/>
 			<view class='map-box'>
 				<image src="@/static/images/index/home_icon_map.png" mode="widthFix"></image>
 				<text>地图</text>
 			</view>
+		
+		
 		</view>
 	</view>
 </template>

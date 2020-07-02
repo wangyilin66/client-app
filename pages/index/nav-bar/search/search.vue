@@ -5,7 +5,7 @@
 			<uni-icons type="arrowdown" size="10" color="#ffffff"></uni-icons>
 			<view class="line"></view>
 		</view>
-		<view class='input-box'>
+		<view class='input-box' >
 			<uni-icons type="search" size="10" color="#bbbbbb"></uni-icons>
 			<input type="text" :value="iptVal" :placeholder="iptPHVal" placeholder-style="color:#bbb" />
 		</view>
@@ -23,7 +23,7 @@
 			}
 		},
 		methods: {
-
+			
 		},
 		components:{
 			uniIcons

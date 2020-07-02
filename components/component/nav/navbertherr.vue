@@ -48,6 +48,7 @@
 	.status_bar {
 		height: var(--status-bar-height);
 		width: 100%;
+		background: #000000;
 	}
 
 	.navbae-title {

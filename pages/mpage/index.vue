@@ -1,142 +1,148 @@
 <template>
-	<view class="container">
-
-		<view class="header">
-			<view class="userimg">
-				<!-- <image src="../../static/images/ykan/20160831002034_FVid3.jpeg" mode=""></image> -->
-				<u-avatar :src="src"></u-avatar>
+	<view class="index">
+		<view>
+		      <view class="status_bar">
+		          <!-- 这里是状态栏 -->
+		      </view>
+		  </view>
+		<view class="container">
+			<view class="header">
+				<view class="userimg">
+					<!-- <image src="../../static/images/ykan/20160831002034_FVid3.jpeg" mode=""></image> -->
+					<u-avatar :src="src"></u-avatar>
+				</view>
+				<view class="usernumber" v-show="log==true" >
+					<view class="phone">
+						{{phone}}
+					</view>
+					<view class="compile" @click="gopersonage">
+						编辑个人自资料
+					</view>
+				</view>
+				<view class="usernumber" @click="login()"  v-show="log==false">
+					<view class="phone">
+						请登录
+					</view>
+					<view class="compile">
+						您现在未登录
+					</view>
+				</view>
+		
+		
+				<view class="set" @click="goset">
+					<image src="../../static/images/mpage/mine_shezhi_icon.png" mode=""></image>
+				</view>
+		
 			</view>
-			<view class="usernumber" v-show="log==true" >
-				<view class="phone">
-					{{phone}}
-				</view>
-				<view class="compile" @click="gopersonage">
-					编辑个人自资料
-				</view>
+			<view class="background">
 			</view>
-			<view class="usernumber" @click="login()"  v-show="log==false">
-				<view class="phone">
-					请登录
-				</view>
-				<view class="compile">
-					您现在未登录
-				</view>
-			</view>
-
-
-			<view class="set" @click="goset">
-				<image src="../../static/images/mpage/mine_shezhi_icon.png" mode=""></image>
-			</view>
-
-		</view>
-		<view class="background">
-		</view>
-		<!-- 背景色 -->
-		<!-- <view class="" @click="login()">
-				手机号登陆
-		</view> -->
-		<view class="navbox">
-			<view class="navlist" v-for="(item,index) in data" :key="index">
-				<view class="navimg">
-					<image :src="item.img" mode=""></image>
-				</view>
-				<view class="navtext">
-					{{item.text}}({{item.unmber}})
-				</view>
-			</view>
-		</view>
-		<!-- 我的服务 -->
-		<view class="containerbox">
-			<view class="mytitle">
-				<view class="titlefont">
-					我的服务
-				</view>
-				<view class="text">
+			<!-- 背景色 -->
+			<!-- <view class="" @click="login()">
+					手机号登陆
+			</view> -->
+			<view class="navbox">
+				<view class="navlist" v-for="(item,index) in data" :key="index" @click="goitem(item)">
+					<view class="navimg">
+						<image :src="item.img" mode=""></image>
+					</view>
+					<view class="navtext">
+						{{item.text}}({{item.unmber}})
+					</view>
 				</view>
 			</view>
-			<view class="serve">
-				<view class="mynav">
-					<view class="navlist" v-for="(item,index) in datas" :key="index">
-						<view class="listimg">
-							<image :src="item.img" mode=""></image>
-
+			<!-- 我的服务 -->
+			<view class="containerbox">
+				<view class="mytitle">
+					<view class="titlefont">
+						我的服务
+					</view>
+					<view class="text">
+					</view>
+				</view>
+				<view class="serve">
+					<view class="mynav">
+						<view class="navlist" v-for="(item,index) in datas" :key="index">
+							<view class="listimg">
+								<image :src="item.img" mode=""></image>
+		
+							</view>
+							<view class="listtext">
+								{{item.text}}
+							</view>
 						</view>
-						<view class="listtext">
+					</view>
+				</view>
+				<!-- 我的房子 -->
+				<view class="mytitle">
+					<view class="titlefont">
+						我的房子
+					</view>
+					<view class="text">
+						<text>添加房产</text><text class="text">></text>
+					</view>
+				</view>
+				<view class="myhouse">
+					<view class="houseleft">
+						<view class="leftimg">
+							<image src="../../static/images/ykan/20160831002034_FVid3.jpeg" mode=""></image>
+						</view>
+					</view>
+					<view class="houseright">
+						<view class="right">
+							查看房屋估值走势
+						</view>
+						<view class="rightcon">
+							随时掌握小区均价
+						</view>
+						<view class="rightbtn">
+							立即查看
+						</view>
+					</view>
+				</view>
+				<!-- 我是业主 -->
+				<view class="mytitle">
+					<view class="titlefont">
+						我的业主
+					</view>
+					<view class="text">
+						<text>更多服务</text><text class="text">></text>
+					</view>
+				</view>
+				<view class="owner">
+					<view class="ownerbox" v-for="(item,index) in url">
+						<image :src="item.img" mode=""></image>
+					</view>
+				</view>
+				<!-- 钱包 -->
+				<view class="mytitle">
+					<view class="titlefont">
+						我的钱包
+					</view>
+					<view class="text">
+						<text>进入钱包</text><text class="texts">></text>
+					</view>
+				</view>
+				<view class="wallet">
+					<view class="walletbox" :style="{backgroundImage:'url(' + item.img + ')', backgroundRepeat:'no-repeat', backgroundSize:'100% 100%'}"
+					 v-for="(item,index) in font">
+						<view class="wallet-t">
 							{{item.text}}
 						</view>
+						<view class="wallet-con">
+							{{item.text2}}
+						</view>
+		
 					</view>
+		
 				</view>
-			</view>
-			<!-- 我的房子 -->
-			<view class="mytitle">
-				<view class="titlefont">
-					我的房子
+				<view class="invite">
+					加入优品 轻松招租 优品邀您 <text>入住平台</text>
 				</view>
-				<view class="text">
-					<text>添加房产</text><text class="text">></text>
-				</view>
-			</view>
-			<view class="myhouse">
-				<view class="houseleft">
-					<view class="leftimg">
-						<image src="../../static/images/ykan/20160831002034_FVid3.jpeg" mode=""></image>
-					</view>
-				</view>
-				<view class="houseright">
-					<view class="right">
-						查看房屋估值走势
-					</view>
-					<view class="rightcon">
-						随时掌握小区均价
-					</view>
-					<view class="rightbtn">
-						立即查看
-					</view>
-				</view>
-			</view>
-			<!-- 我是业主 -->
-			<view class="mytitle">
-				<view class="titlefont">
-					我的业主
-				</view>
-				<view class="text">
-					<text>更多服务</text><text class="text">></text>
-				</view>
-			</view>
-			<view class="owner">
-				<view class="ownerbox" v-for="(item,index) in url">
-					<image :src="item.img" mode=""></image>
-				</view>
-			</view>
-			<!-- 钱包 -->
-			<view class="mytitle">
-				<view class="titlefont">
-					我的钱包
-				</view>
-				<view class="text">
-					<text>进入钱包</text><text class="texts">></text>
-				</view>
-			</view>
-			<view class="wallet">
-				<view class="walletbox" :style="{backgroundImage:'url(' + item.img + ')', backgroundRepeat:'no-repeat', backgroundSize:'100% 100%'}"
-				 v-for="(item,index) in font">
-					<view class="wallet-t">
-						{{item.text}}
-					</view>
-					<view class="wallet-con">
-						{{item.text2}}
-					</view>
-
-				</view>
-
-			</view>
-			<view class="invite">
-				加入优品 轻松招租 优品邀您 <text>入住平台</text>
 			</view>
 		</view>
-
 		<status-bar></status-bar>
 	</view>
+
 </template>
 
 <script>
@@ -229,6 +235,14 @@
 			}
 		},
 		onLoad() {
+						console.log(this.$u.get())
+						// 带上header(对象形式)，由于header为第三个参数，如果不需要请求参数，第二个参数传一个空对象"{ }"即可
+						this.$u.get('http://192.168.1.101/app/system/getMsgCode?phone=17695921500', {}, {
+						}).then(res => {
+							console.log(res);
+						}).catch(err=>{
+							console.log(err)
+						});
 			if(!uni.getStorageSync("phone")){
 				this.log=false
 			}else{
@@ -253,6 +267,15 @@
 				uni.navigateTo({
 					url:"./set/index"
 				})
+			},
+			goitem(item){
+				switch (item.text){
+					case "二手房":
+					uni.navigateTo({
+						url:"./usedhouse/index"
+					});
+					break;
+				}
 			}
 			
 		},
@@ -264,6 +287,11 @@
 </script>
 
 <style scoped lang="less">
+	 .status_bar {
+	      height: var(--status-bar-height);
+	      width: 100%;
+		  background: #000000;
+	  }
 	.container {
 		box-sizing: border-box;
 		padding: 0 24rpx;
