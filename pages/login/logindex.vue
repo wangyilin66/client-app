@@ -20,7 +20,7 @@
 				<!-- <view class="phonenumber">
 					15888888888
 				</view> -->
-				<input class="phonenumber" type="text" v-model="phonenumber" value="" disabled/>
+				<input class="phonenumber" type="text" v-model="phonenumber" value="" disabled />
 				<view class="phonehint">
 					中国移动认证
 				</view>
@@ -47,52 +47,53 @@
 	export default {
 		data() {
 			return {
-				phonenumber:'15888888888',
+				phonenumber: '15888888888',
 			}
 		},
-		onLoad(){
+		onLoad() {
 			this.res(this.phonenumber)
 		},
 		methods: {
 			// 关闭
-			close(){
+			close() {
 				console.log("关闭登录页");
 				uni.switchTab({
-					url:"/pages/mpage/index"
+					url: "/pages/mpage/index"
 				})
-				
+
 			},
 			// 替换手机号
-			res(val){
+			res(val) {
 				// console.log(this.phonenumber)
-				 let reg = /1(\d{2})\d{4}(\d{4})/g;
-				 let str = val.replace(reg,"1$1****$2");
-				 this.phonenumber=str;
+				let reg = /1(\d{2})\d{4}(\d{4})/g;
+				let str = val.replace(reg, "1$1****$2");
+				this.phonenumber = str;
 			},
 			// 条款1
-			clause1(){
+			clause1() {
 				console.log(111)
 			},
 			// 条款2
-			clause2(){
+			clause2() {
 				console.log(222)
 			},
 			// 条款3
-			clause3(){
+			clause3() {
 				console.log(333)
 			},
 			// 登录
-			phonelog(){
+			phonelog() {
 				console.log("手机号登陆")
+				uni.navigateTo({
+					url:'/js_sdk/fly-flyio/flyio/src//pages/test/test'
+				})
 			},
 			// 其他手机号
-			elsephonelog(){
+			elsephonelog() {
 				uni.navigateTo({
-					url:"./phonelogin"
+					url: "./phonelogin"
 				})
 			}
-			
-
 		},
 		components: {}
 	}
@@ -114,10 +115,12 @@
 			}
 
 		}
+
 		// 内容
 		.loginbox {
 			box-sizing: border-box;
 			padding: 146rpx 64rpx 0;
+
 			.logintext {
 				.textt {
 					font-size: 60rpx;
@@ -135,55 +138,64 @@
 						margin-left: 15rpx;
 					}
 				}
-				.texthint{
+
+				.texthint {
 					font-size: 34rpx;
 					margin: 13rpx 0 38rpx 0;
 				}
 
 			}
-			.phoneverify{
+
+			.phoneverify {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
 				height: 56rpx;
 				margin-bottom: 44rpx;
-				.phonenumber{
+
+				.phonenumber {
 					font-size: 35rpx;
 					font-weight: 600;
 				}
-				.phonehint{
+
+				.phonehint {
 					font-size: 26rpx;
 					color: #808080;
 				}
-				
-				
+
+
 			}
-			.clause{
+
+			.clause {
 				font-size: 26rpx;
-				color:#BBBBBB;
+				color: #BBBBBB;
 				margin-bottom: 90rpx;
-				text{
+
+				text {
 					color: #47CD97;
 				}
 			}
-			.loginbtn{
-				view{
+
+			.loginbtn {
+				view {
 					height: 100rpx;
-					font-size:40rpx;
+					font-size: 40rpx;
 					line-height: 100rpx;
 					text-align: center;
 					border-radius: 60rpx;
 					margin-bottom: 40rpx;
 				}
-				.btn{
+
+				.btn {
 					color: #FFFFFF;
 					background: #47CD97;
 				}
-				.btns{
+
+				.btns {
 					color: #BBBBBB;
 				}
 			}
-		
+
 		}
 	}
 </style>

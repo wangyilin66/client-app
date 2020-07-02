@@ -1,6 +1,6 @@
 <template>
 	<view class='icon-grid' v-bind:style="{'--flexWrap':flexWrap,fontSize:fontSize+'rpx','--rowNum':rowNum}">
-		<view v-for="(item,index) in gridData" :key="index" class="grid-item">
+		<view v-for="(item,index) in gridData" :key="index" class="grid-item" @click="iconChange(index)">
 			<image :src="item.icon" v-bind:style="{width:imgSize+'rpx',height:imgSize+'rpx'}"/>
 			<text>{{item.text}}</text>
 		</view>
@@ -15,7 +15,9 @@
 			}
 		},
 		methods: {
-
+			iconChange(idx){
+				this.$emit('navToGo',idx);
+			}
 		},
 		props: {
 			gridData: {

@@ -109,7 +109,7 @@
 					</view>
 				</view>
 				<view class="owner">
-					<view class="ownerbox" v-for="(item,index) in url">
+					<view class="ownerbox" v-for="(item,index) in url" :key="index">
 						<image :src="item.img" mode=""></image>
 					</view>
 				</view>
@@ -124,7 +124,7 @@
 				</view>
 				<view class="wallet">
 					<view class="walletbox" :style="{backgroundImage:'url(' + item.img + ')', backgroundRepeat:'no-repeat', backgroundSize:'100% 100%'}"
-					 v-for="(item,index) in font">
+					 v-for="(item,index) in font" :key="index">
 						<view class="wallet-t">
 							{{item.text}}
 						</view>
@@ -141,13 +141,13 @@
 			</view>
 		</view>
 		<status-bar></status-bar>
+		
 	</view>
 
 </template>
 
 <script>
 	import statusBar from '@/components/component/status-bar/status-bar.vue'
-	import mapSearch from '@/components/component/map-search/map-search.vue'
 	export default {
 		data() {
 			return {
@@ -232,6 +232,7 @@
 				],
 				log:false,
 				phone:""
+				
 			}
 		},
 		onLoad() {
@@ -279,9 +280,8 @@
 			}
 			
 		},
-		components: {
-			statusBar,
-			mapSearch
+		components:{
+			statusBar
 		}
 	}
 </script>

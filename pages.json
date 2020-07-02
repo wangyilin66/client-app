@@ -1,35 +1,61 @@
 {
 	"easycom": {
-			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
-		},
-	"pages": [{
-		"path": "pages/index/index",
-		"style": {
-			"navigationStyle": "custom"
-		}
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
 	},
-	{
+	"pages": [{
+		"path": "pages/index/index/index",
+		"style": {
+			"navigationBarTitleText": "首页",
+			"app-plus": {
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "white"
+		}
+	},{
 		"path": "pages/ykan/index",
 		"style": {
-			"navigationStyle": "custom"
-		},
-		"navigationBarTextStyle": "black"
-	
-	}, 
-	{
+			"navigationBarTitleText": "优看",
+			"app-plus": {
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "white"
+		}
+	}, {
+		"path": "pages/index/secondary/sec_index/index",
+		"style": {
+			"navigationBarTitleText": "二手房",
+			"app-plus": {
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "black"
+		}
+	}, {
+		"path": "pages/index/secondary/sec_content/index",
+		"style": {
+			"navigationBarTitleText": "二手房详情",
+			"app-plus": {
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "white"
+		}
+	},{
 		"path": "pages/index/search/search",
 		"style": {
-			"navigationStyle": "custom"
-		},
-		"navigationBarTextStyle": "black"
-	
-	}, 
-	{
+			"navigationBarTitleText": "搜索页",
+			"app-plus": {
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "white"
+		}
+	}, {
 		"path": "pages/news/index",
 		"style": {
-			"navigationStyle": "custom"
-		},
-		"navigationBarTextStyle": "black"
+			"navigationBarTitleText": "消息",
+			"app-plus": {
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "white"
+		}
 	}, 
 	{
 		"path": "pages/news/subscription/subscription",
@@ -46,17 +72,29 @@
 	{
 		"path": "pages/mpage/index",
 		"style": {
-			"navigationStyle": "custom"
+			"navigationBarTitleText": "我的",
+			"app-plus": {
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "white"
 		}
 	}, {
 		"path": "pages/login/logindex",
 		"style": {
-			"navigationStyle": "custom"
+			"navigationBarTitleText": "本机注册",
+			"app-plus": {
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "black"
 		}
 	},{
 		"path": "pages/login/phonelogin",
 		"style": {
-			"navigationStyle": "custom"
+			"navigationBarTitleText": "手机号注册",
+			"app-plus": {
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "black"
 		}
 	},{
 		"path": "pages/ykan/detaisl",
@@ -205,7 +243,7 @@
 		"selectedColor": "#47CD97",
 		"backgroundColor": "#FFFFFF",
 		"list": [{
-				"pagePath": "pages/index/index",
+				"pagePath": "pages/index/index/index",
 				"text": "首页",
 				"iconPath": "static/images/tabbar/tab_home_nor.png",
 				"selectedIconPath": "static/images/tabbar/tab_home_light.png"
@@ -227,6 +265,16 @@
 				"text": "我的",
 				"iconPath": "static/images/tabbar/tab_mine_nor.png",
 				"selectedIconPath": "static/images/tabbar/tab_mine_light.png"
+			}
+		]
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
 			}
 		]
 	}
