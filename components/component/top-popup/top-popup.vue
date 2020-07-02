@@ -8,8 +8,8 @@
 			<view class="option">
 				<slot></slot>
 			</view>
-			<view class="popup-btn-box" :style="[{height:btnHeight+'rpx'},{fontSize:btnfontSize + 'rpx'}]">
-				<view v-for="(item,idx) in popupBtn" :key="idx" v-if="isBtn" @click="btnClick(item,idx)" :style="[{height:btnHeight+'rpx'},{lineHeight:btnHeight+'rpx'},{backgroundColor:item.bgColor},{color:item.color},{width:item.width}]" :class="item.className">{{item.text}}</view>
+			<view class="popup-btn-box" :style="[{height:btnHeight+'rpx'},{fontSize:btnfontSize + 'rpx'}]"  v-if="popupBtn">
+				<view v-for="(item,idx) in popupBtn" :key="idx"@click="btnClick(item,idx)" :style="[{height:btnHeight+'rpx'},{lineHeight:btnHeight+'rpx'},{backgroundColor:item.bgColor},{color:item.color},{width:item.width}]" :class="item.className">{{item.text}}</view>
 			</view>
 		</view>
 	</view>
@@ -55,6 +55,7 @@
 				type:Boolean,
 				default:true
 			},
+			
 			btnHeight:{
 				type:Number,
 				default:100

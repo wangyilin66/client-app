@@ -1,5 +1,5 @@
 <template>
-	<view class='visiting-card'>
+	<view class='visiting-card' @click="gocounselor(1)">
 		<view class="userImg">
 			<image :src="visitData.userImgUrl" mode="widthFix"></image>
 			<text>{{visitData.userName}}</text>
@@ -19,7 +19,9 @@
 			}
 		},
 		methods: {
-
+			gocounselor(item){
+					this.$emit("gocounselor",item);
+			}
 		},
 		props: {
 			visitData:{

@@ -1,6 +1,6 @@
 <template>
 	<view class="news-list">
-		<view class="list-item" v-for="(item,idx) in listData" :key="idx" v-bind:style="{height:item.itemHeight + 'rpx'}">
+		<view class="list-item" v-for="(item,idx) in listData" :key="idx" @click="gosubscription(idx)" v-bind:style="{height:item.itemHeight + 'rpx'}" >
 			<view class="img-left">
 				<image :src="item.imgUrl" v-bind:style="{width:item.imgWidth + 'rpx',height:item.imgHeight + 'rpx'}"></image>
 				<view >
@@ -30,6 +30,11 @@
 		data() {
 			return {
 
+			}
+		},
+		methods:{
+			gosubscription:function(idx){
+				this.$emit("gosubscrip",idx)
 			}
 		},
 		props: {
